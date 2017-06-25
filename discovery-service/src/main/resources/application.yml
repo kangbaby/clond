@@ -1,0 +1,12 @@
+server:
+  port: 8088
+eureka:
+  instance:
+    hostname: discovery
+  client:
+    register-with-eureka: false #register-with-eureka配置为false，这个配置表示是否将其本身注册到eureka server以被其他发现
+    fetch-registry: false       #fetch-registry配置为false，这个配置表示是否需要从eureka server中抓取eureka上的注册信息
+    service-url:
+       defaultZone: http://localhost:${server.port}/eureka/
+
+spring.cloud.config.discovery.enabled: true
